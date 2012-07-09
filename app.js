@@ -23,57 +23,7 @@ Ext.application({
         Ext.create('Ext.container.Viewport', {
             layout: 'vbox',
             margin: '5 5 5 5',
-            items: [/*{
-                xtype: 'chart',
-                border: false,
-                animate: true,
-                margin: 5,
-                background: '#ccc',
-                height: 50,
-                width: 200,
-                legend: {
-                    position: 'right'
-                },
-                store: Ext.create('Ext.data.JsonStore', {
-                    fields: ['period', 'data1', 'data2', 'data3'],
-                    data: [
-                        { 'period': 1, 'data1': 8 },
-                        { 'period': 2, 'data1': 11 },
-                        { 'period': 3, 'data1': 14 },
-                        { 'period': 4, 'data1': 9 },
-                        { 'period': 5, 'data1': 12 },
-                        { 'period': 6, 'data1': 15 },
-                        { 'period': 7, 'data1': 18 },
-                        { 'period': 8, 'data1': 14 },
-                        { 'period': 9, 'data1': 9 },
-                        { 'period': 10, 'data1': 11 }
-                    ]
-                }),
-                shadow: false,
-                axes: [{
-                    type: 'SparkNumeric',
-                    dashSize: 1,
-                    position: 'left',
-                    fields: ['data1']
-
-                }, {
-                    type: 'SparkNumeric',
-                    dashSize: 1,
-                    position: 'bottom',
-                    fields: ['period']
-                }],
-                series: [{
-                    type: 'line',
-                    showMarkers: false,
-                    highlight: {
-                        size: 1,
-                        radius: 1
-                    },
-                    axis: 'left',
-                    xField: 'period',
-                    yField: 'data1'
-                }]
-            },*/ {
+            items: [{
                 xtype: 'sparklinechart',
                 border: false,
                 animate: true,
@@ -124,54 +74,6 @@ Ext.application({
                 }],
                 series: [{
                     type: 'sparkline',
-                    highlight: {
-                        size: 1,
-                        radius: 1
-                    },
-                    axis: 'left',
-                    xField: 'period',
-                    yField: 'data1'
-                }]
-            }/*, {
-                xtype: 'chart',
-                border: false,
-                animate: true,
-                margin: 5,
-                height: 200,
-                width: 200,
-                legend: {
-                    position: 'right'
-                },
-                store: Ext.create('Ext.data.JsonStore', {
-                    fields: ['period', 'data1', 'data2', 'data3'],
-                    data: [
-                        { 'period': 1, 'data1': 8 },
-                        { 'period': 2, 'data1': 11 },
-                        { 'period': 3, 'data1': 14 },
-                        { 'period': 4, 'data1': 9 },
-                        { 'period': 5, 'data1': 12 },
-                        { 'period': 6, 'data1': 15 },
-                        { 'period': 7, 'data1': 18 },
-                        { 'period': 8, 'data1': 14 },
-                        { 'period': 9, 'data1': 9 },
-                        { 'period': 10, 'data1': 11 }
-                    ]
-                }),
-                shadow: false,
-                axes: [{
-                    type: 'Numeric',
-                    dashSize: 1,
-                    position: 'left',
-                    fields: ['data1']
-
-                }, {
-                    type: 'Numeric',
-                    dashSize: 1,
-                    position: 'bottom',
-                    fields: ['period']
-                }],
-                series: [{
-                    type: 'line',
                     showMarkers: false,
                     highlight: {
                         size: 1,
@@ -181,7 +83,7 @@ Ext.application({
                     xField: 'period',
                     yField: 'data1'
                 }]
-            }*/]
+            }]
         });
     }
 });

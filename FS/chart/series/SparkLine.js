@@ -2,96 +2,14 @@
  * @class FS.chart.series.SparkLine
  * @extends Ext.chart.series.Line
  *
- * Creates a Line Chart. A Line Chart is a useful visualization technique to display quantitative information for different
+ * Creates a SparkLine Chart. A Line Chart is a useful visualization technique to display quantitative information for different
  * categories or other real values (as opposed to the bar chart), that can show some progression (or regression) in the dataset.
  * As with all other series, the Line Series must be appended in the *series* Chart array configuration. See the Chart
  * documentation for more information. A typical configuration object for the line series could be:
  *
  *     @example
- *     var store = Ext.create('Ext.data.JsonStore', {
- *         fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5'],
- *         data: [
- *             { 'name': 'metric one',   'data1': 10, 'data2': 12, 'data3': 14, 'data4': 8,  'data5': 13 },
- *             { 'name': 'metric two',   'data1': 7,  'data2': 8,  'data3': 16, 'data4': 10, 'data5': 3  },
- *             { 'name': 'metric three', 'data1': 5,  'data2': 2,  'data3': 14, 'data4': 12, 'data5': 7  },
- *             { 'name': 'metric four',  'data1': 2,  'data2': 14, 'data3': 6,  'data4': 1,  'data5': 23 },
- *             { 'name': 'metric five',  'data1': 4,  'data2': 4,  'data3': 36, 'data4': 13, 'data5': 33 }
- *         ]
- *     });
+ *     See app.js for an example how to create a sparkline chart.
  *
- *     Ext.create('Ext.chart.Chart', {
- *         renderTo: Ext.getBody(),
- *         width: 500,
- *         height: 300,
- *         animate: true,
- *         store: store,
- *         axes: [
- *             {
- *                 type: 'Numeric',
- *                 position: 'left',
- *                 fields: ['data1', 'data2'],
- *                 label: {
- *                     renderer: Ext.util.Format.numberRenderer('0,0')
- *                 },
- *                 title: 'Sample Values',
- *                 grid: true,
- *                 minimum: 0
- *             },
- *             {
- *                 type: 'Category',
- *                 position: 'bottom',
- *                 fields: ['name'],
- *                 title: 'Sample Metrics'
- *             }
- *         ],
- *         series: [
- *             {
- *                 type: 'line',
- *                 highlight: {
- *                     size: 7,
- *                     radius: 7
- *                 },
- *                 axis: 'left',
- *                 xField: 'name',
- *                 yField: 'data1',
- *                 markerConfig: {
- *                     type: 'cross',
- *                     size: 4,
- *                     radius: 4,
- *                     'stroke-width': 0
- *                 }
- *             },
- *             {
- *                 type: 'line',
- *                 highlight: {
- *                     size: 7,
- *                     radius: 7
- *                 },
- *                 axis: 'left',
- *                 fill: true,
- *                 xField: 'name',
- *                 yField: 'data2',
- *                 markerConfig: {
- *                     type: 'circle',
- *                     size: 4,
- *                     radius: 4,
- *                     'stroke-width': 0
- *                 }
- *             }
- *         ]
- *     });
- *
- * In this configuration we're adding two series (or lines), one bound to the `data1`
- * property of the store and the other to `data3`. The type for both configurations is
- * `line`. The `xField` for both series is the same, the name propert of the store.
- * Both line series share the same axis, the left axis. You can set particular marker
- * configuration by adding properties onto the markerConfig object. Both series have
- * an object as highlight so that markers animate smoothly to the properties in highlight
- * when hovered. The second series has `fill=true` which means that the line will also
- * have an area below it of the same color.
- *
- * **Note:** In the series definition remember to explicitly set the axis to bind the
- * values of the line series to. This can be done by using the `axis` configuration property.
  */
 Ext.define('FS.chart.series.SparkLine', {
 
@@ -116,7 +34,7 @@ Ext.define('FS.chart.series.SparkLine', {
      * Whether markers should be displayed at the data points along the line. If true,
      * then the {@link #markerConfig} config item will determine the markers' styling.
      */
-    showMarkers: true,
+    showMarkers: false,
 
     /**
      * @cfg {Object} markerConfig
