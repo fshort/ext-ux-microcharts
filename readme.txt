@@ -1,0 +1,6 @@
+- created extjs symlink so the Ext namespace is recognized by the sencha SDK. this allows the build to succeed
+- to build the compressed/minified js code (points at index-build.js):
+    - sencha create jsb -a index-build.html -p app.jsb3 -v
+    - sencha build -p app.jsb3 -d . -v
+- once build is complete, change the js reference in index.html to point at app-all.js.
+- Extjs reference in index.html should point at ext.js
